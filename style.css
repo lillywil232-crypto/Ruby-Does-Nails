@@ -1,0 +1,83 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 16px;
+    background-color: #fdf6f9;
+    line-height: 1.6;
+    text-align: center;   /* CENTERS ALL TEXT */
+}
+
+nav {
+    background-color: #ffe6f0;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    font-size: 150%;
+}
+
+nav a {
+    color: #d86f96;
+    text-decoration: none;
+    margin: 10px 12px;
+    font-weight: bold;
+}
+
+h1 {
+    color: #d86f96;
+    font-size: 300%;
+}
+
+h2 {
+    color: #d86f96;
+    font-size: 250%;
+}
+
+p {
+    color: #d86f96;
+    font-size: 150%;
+}
+
+/* Gallery styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, auto); /* 3 images per row */
+    gap: 50px; /* spacing between images */
+    margin-top: 20px;
+    justify-content: center; /* center the grid */
+}
+
+.gallery img {
+    width: 600px;      /* fixed width */
+    height: 1000px;     /* fixed height */
+    object-fit: cover; /* crop images to fit dimensions */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.25); /* hover enlarge */
+}
+
+/* Responsive: 2 per row on tablets */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, auto);
+        gap: 30px;
+        justify-content: center;
+    }
+}
+
+/* Responsive: 1 per row on phones */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center; /* center single images */
+    }
+
+    .gallery img {
+        width: 80%;  /* scale down on mobile */
+        height: auto; /* maintain aspect ratio */
+    }
+}
